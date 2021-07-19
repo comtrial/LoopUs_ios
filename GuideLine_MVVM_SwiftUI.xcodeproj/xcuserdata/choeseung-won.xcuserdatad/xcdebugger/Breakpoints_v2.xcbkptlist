@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "3C34BF6B-4A51-4D95-BCFA-DCFE543B7E11"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7E1D0C86-11FF-4D51-8705-AABEDC4EDDDA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GuideLine_MVVM_SwiftUI/Service/HomeService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "getUsers(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2FB68565-5202-4D7A-BD13-A9746080BD1E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GuideLine_MVVM_SwiftUI/Service/HomeService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "getUsers(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D02CED1E-2E29-44F9-9120-4D3A8128620A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GuideLine_MVVM_SwiftUI/Service/HomeService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "getUsers(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F2641DD4-CBFD-416D-8036-B74E1528CABE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GuideLine_MVVM_SwiftUI/Screen/Home/HomeContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "7"
+            endingLineNumber = "7"
+            landmarkName = "HomeContentView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "F2641DD4-CBFD-416D-8036-B74E1528CABE - 932db9deab7ea799"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of GuideLine_MVVM_SwiftUI.HomeContentView.userModel : GuideLine_MVVM_SwiftUI.HomeSourseOfTruth"
+                  moduleName = "GuideLine_MVVM_SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/choeseung-won/programming/Swift/ios_tutorial/GuideLine_MVVM_SwiftUI/GuideLine_MVVM_SwiftUI/Screen/Home/HomeContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "6"
+                  endingLineNumber = "6"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "F2641DD4-CBFD-416D-8036-B74E1528CABE - 98c60457843904f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuideLine_MVVM_SwiftUI.HomeContentView.userModel.getter : GuideLine_MVVM_SwiftUI.HomeSourseOfTruth"
+                  moduleName = "GuideLine_MVVM_SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/choeseung-won/programming/Swift/ios_tutorial/GuideLine_MVVM_SwiftUI/GuideLine_MVVM_SwiftUI/Screen/Home/HomeContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "6"
+                  endingLineNumber = "6"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "F2641DD4-CBFD-416D-8036-B74E1528CABE - e95ef1d419289c83"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuideLine_MVVM_SwiftUI.HomeContentView.userModel.setter : GuideLine_MVVM_SwiftUI.HomeSourseOfTruth"
+                  moduleName = "GuideLine_MVVM_SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/choeseung-won/programming/Swift/ios_tutorial/GuideLine_MVVM_SwiftUI/GuideLine_MVVM_SwiftUI/Screen/Home/HomeContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "6"
+                  endingLineNumber = "6"
+                  offsetFromSymbolStart = "74">
+               </Location>
+               <Location
+                  uuid = "F2641DD4-CBFD-416D-8036-B74E1528CABE - e7cf7406c3d10218"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuideLine_MVVM_SwiftUI.HomeContentView.userModel.modify : GuideLine_MVVM_SwiftUI.HomeSourseOfTruth"
+                  moduleName = "GuideLine_MVVM_SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/choeseung-won/programming/Swift/ios_tutorial/GuideLine_MVVM_SwiftUI/GuideLine_MVVM_SwiftUI/Screen/Home/HomeContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "14">
+               </Location>
+               <Location
+                  uuid = "F2641DD4-CBFD-416D-8036-B74E1528CABE - 521a0d0937835dda"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuideLine_MVVM_SwiftUI.HomeContentView.userModel.modify : GuideLine_MVVM_SwiftUI.HomeSourseOfTruth with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "GuideLine_MVVM_SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/choeseung-won/programming/Swift/ios_tutorial/GuideLine_MVVM_SwiftUI/GuideLine_MVVM_SwiftUI/Screen/Home/HomeContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "6"
+                  endingLineNumber = "6"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "F2641DD4-CBFD-416D-8036-B74E1528CABE - 4148f711c870f04a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuideLine_MVVM_SwiftUI.HomeContentView.$userModel.getter : SwiftUI.ObservedObject&lt;GuideLine_MVVM_SwiftUI.HomeSourseOfTruth&gt;.Wrapper"
+                  moduleName = "GuideLine_MVVM_SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/choeseung-won/programming/Swift/ios_tutorial/GuideLine_MVVM_SwiftUI/GuideLine_MVVM_SwiftUI/Screen/Home/HomeContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "6"
+                  endingLineNumber = "6"
+                  offsetFromSymbolStart = "93">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E0DA6875-3085-4EE3-90A9-48FE9C334FFE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GuideLine_MVVM_SwiftUI/Screen/Home/HomeContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "739B268D-01E8-4880-8D2C-29FA8D9F12EB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GuideLine_MVVM_SwiftUI/Screen/Home/HomeSourseOfTruth.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "HomeSourseOfTruth"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "77D6B21D-99BE-4435-A69C-5AE6C4D9FCDE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GuideLine_MVVM_SwiftUI/Screen/Home/HomeSourseOfTruth.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "fetchRandomUsers()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "334A6C08-CBA0-4135-9539-A62261A5B167"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GuideLine_MVVM_SwiftUI/Screen/Home_Screen/HomeContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "5"
+            endingLineNumber = "5"
+            landmarkName = "HomeContentView"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D80DDEA1-1E98-45D4-B5A4-A31ED54390C9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GuideLine_MVVM_SwiftUI/Screen/Upload_Screen/UploadContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9F2D5034-1F9A-4BEA-9F7A-344B6A9764C6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GuideLine_MVVM_SwiftUI/Screen/Upload_Screen/UploadContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
