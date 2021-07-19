@@ -35,88 +35,81 @@ struct UploadContentView: View {
                     Section(header: Text("양식 설정")) {
                         Toggle("학교 전체 대상 업로드", isOn: $shouldSendCampus)
                         Toggle("질문 양식", isOn: $shouldWriteQusetion)
-                    }
+                    }// 양식 설정 Section
+                    
+                    Section(header: Text("사진을 추가하세요")) {
+                      
+                        Image(uiImage: imageInBlackBox)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 100 , height: 100)
+                            .cornerRadius(10)
+                            .border(Color.gray, width: 1)
+                            .clipped()
+                        
+                        //img picker
+                        Button(action: {
+                            self.isShowingImagePicker.toggle()
+                        }, label: {
+                            Text("이미지 선택")
+                                
+                        })
+                        .sheet(isPresented: $isShowingImagePicker, content: {
+                            
+                            //ImagePicker(image: self.$selectedImage)
+                            
+                            
+                            //isShowingImage와 ImagePickerViewdml ispresented와 등록
+                            ImagePickerView(isPresented: self.$isShowingImagePicker, selectedImage: self.$imageInBlackBox)
+                            
+                        }) // imgPicker Btn
+                        
+                        
+                        
+                        Button(action: {
+                            let url: URL = URL(string: "http://localhost:3000/test_post_img")!
+                            let uiImage: UIImage = self.imageInBlackBox
+                            let imageData: Data = uiImage.jpegData(compressionQuality: 0.1) ?? Data()
+                            
+                            AF.upload(multipartFormData: { multipartFormData in
+                                multipartFormData.append(Data("value".utf8), withName: "key")
+                                multipartFormData.append(imageData, withName: "image")
+                            }, to: url)
+                            .responseJSON {
+                                response in
+                                print(response)
+                            }
+                        }, label: {
+                            Text("upload Img")
+                        })
+                    
+                    
+                    }// 사진 작성 Section
                     
                     Section(header: Text("작성 양식")){
                         TextField("게시물 제목을 입력하세요!!", text:
                                     $title)
                             .autocapitalization(.none)
-                        TextEditor(text: $content)
-                            
-                            .frame(minHeight: 30, alignment: .leading)
-
-    //                            .autocapitalization(.none)
-                                //.multilineTextAlignment(.leading)
+                        CustomTextEditor.init(placeholder: "게시물 내용을 작성해 주세요!!", text: $content)
                             .frame(minWidth: 100, maxWidth: .infinity, minHeight: 100, maxHeight: .infinity, alignment: .topLeading)
-                    }
+                    }// 작성 양식 Section
+
                     
-                    if content.isEmpty {
-                        
-                    }
-                    
-                    
-                    //title
-                    
-                 
+                    Button(action: {}) {
+                        RoundedRectangle(cornerRadius: 10)
+                            .frame(height: 60)
+                            .overlay(
+                                Text("Upload!!")
+                                    .foregroundColor(.white)
+                            )
+                    }.padding()
                     
                 }// form
-                
-                Button(action: {}) {
-                    RoundedRectangle(cornerRadius: 10)
-                        .frame(height: 60)
-                        .overlay(
-                            Text("Upload!!")
-                                .foregroundColor(.white)
-                        )
-                }.padding()
-                    
-            
-                
-            }// text form
-            
-            
-            Image(uiImage: imageInBlackBox)
-                .resizable()
-                .scaledToFill()
-                .frame(width: 200, height: 200)
-                .border(Color.black, width: 1)
-                .clipped()
-            
-            //img picker
-            Button(action: {
-                self.isShowingImagePicker.toggle()
-            }, label: {
-                Text("이미지 선택")
-                    .font(.system(size: 24))
-            })
-            .sheet(isPresented: $isShowingImagePicker, content: {
-                
-                //ImagePicker(image: self.$selectedImage)
-                
-                
-                //isShowingImage와 ImagePickerViewdml ispresented와 등록
-                ImagePickerView(isPresented: self.$isShowingImagePicker, selectedImage: self.$imageInBlackBox)
-                
-            }) // imgPicker Btn
+  
+            }//Vstack
             
             
             
-            Button(action: {
-                let url: URL = URL(string: "http://localhost:3000/test_post_img")!
-                let uiImage: UIImage = self.imageInBlackBox
-                let imageData: Data = uiImage.jpegData(compressionQuality: 0.1) ?? Data()
-                
-                AF.upload(multipartFormData: { multipartFormData in
-                    multipartFormData.append(Data("value".utf8), withName: "key")
-                    multipartFormData.append(imageData, withName: "image")
-                }, to: url)
-                .responseJSON {
-                    response in
-                    print(response)
-                }
-            }, label: {
-                Text("upload Img")
-            })
             
             
             
@@ -219,5 +212,28 @@ struct ImagePickerView: UIViewControllerRepresentable {
     
     func updateUIViewController(_ uiViewController: ImagePickerView.UIViewControllerType, context: UIViewControllerRepresentableContext<ImagePickerView>) {
         
+    }
+}
+
+struct CustomTextEditor: View {
+    let placeholder: String
+    @Binding var text: String
+    let internalPadding: CGFloat = 0
+    var body: some View {
+        ZStack(alignment: .topLeading) {
+            if text.isEmpty  {
+                Text(placeholder)
+                    
+                    .foregroundColor(Color.primary.opacity(0.3))
+                    .padding(EdgeInsets(top: 7, leading: 0, bottom: 0, trailing: 0))
+                    .padding(internalPadding)
+            }
+            TextEditor(text: $text)
+                .padding(internalPadding)
+        }.onAppear() {
+            UITextView.appearance().backgroundColor = .clear
+        }.onDisappear() {
+            UITextView.appearance().backgroundColor = nil
+        }
     }
 }
