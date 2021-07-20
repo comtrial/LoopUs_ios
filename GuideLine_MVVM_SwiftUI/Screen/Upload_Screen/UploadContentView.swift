@@ -39,14 +39,6 @@ struct UploadContentView: View {
                     
                     Section(header: Text("사진을 추가하세요")) {
                       
-                        Image(uiImage: imageInBlackBox)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 100 , height: 100)
-                            .cornerRadius(10)
-                            .border(Color.gray, width: 1)
-                            .clipped()
-                        
                         //img picker
                         Button(action: {
                             self.isShowingImagePicker.toggle()
@@ -65,23 +57,37 @@ struct UploadContentView: View {
                         }) // imgPicker Btn
                         
                         
-                        
-                        Button(action: {
-                            let url: URL = URL(string: "http://localhost:3000/test_post_img")!
-                            let uiImage: UIImage = self.imageInBlackBox
-                            let imageData: Data = uiImage.jpegData(compressionQuality: 0.1) ?? Data()
+                        Image(uiImage: imageInBlackBox)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 100 , height: 100)
+                            .border(Color.gray, width: 1)
+                            .cornerRadius(10)
                             
-                            AF.upload(multipartFormData: { multipartFormData in
-                                multipartFormData.append(Data("value".utf8), withName: "key")
-                                multipartFormData.append(imageData, withName: "image")
-                            }, to: url)
-                            .responseJSON {
-                                response in
-                                print(response)
-                            }
-                        }, label: {
-                            Text("upload Img")
-                        })
+                            .clipped()
+                        
+                        
+                        
+                        
+                        
+//                        Button(action: {
+//                            let url: URL = URL(string: "http://127.0.0.1:8000/api/feed/")!
+//                            let uiImage: UIImage = self.imageInBlackBox
+//                            let imageData = uiImage.jpegData(compressionQuality: 0.8) ?? Data()
+////                            let imageData: Data = uiImage.jpegData(compressionQuality: 0.1) ?? Data()
+//
+//                            AF.upload(multipartFormData: { multipartFormData in
+//                                multipartFormData.append(Data(title.utf8), withName: "title")
+//                                multipartFormData.append(Data(content.utf8), withName: "content")
+//                                multipartFormData.append(imageData, withName: "feed_img", fileName: "photo.jpg", mimeType: "jpg/png")
+//                            }, to: url)
+//                            .responseJSON {
+//                                response in
+//                                print(response)
+//                            }
+//                        }, label: {
+//                            Text("upload Img")
+//                        })
                     
                     
                     }// 사진 작성 Section
@@ -94,81 +100,43 @@ struct UploadContentView: View {
                             .frame(minWidth: 100, maxWidth: .infinity, minHeight: 100, maxHeight: .infinity, alignment: .topLeading)
                     }// 작성 양식 Section
 
-                    
-                    Button(action: {}) {
-                        RoundedRectangle(cornerRadius: 10)
-                            .frame(height: 60)
-                            .overlay(
-                                Text("Upload!!")
-                                    .foregroundColor(.white)
-                            )
-                    }.padding()
-                    
                 }// form
   
+                
+                Button(action: {
+                    
+                    let url: URL = URL(string: "http://127.0.0.1:8000/api/feed/")!
+                    let uiImage: UIImage = self.imageInBlackBox
+                    let imageData = uiImage.jpegData(compressionQuality: 0.8) ?? Data()
+//                            let imageData: Data = uiImage.jpegData(compressionQuality: 0.1) ?? Data()
+                    
+                    AF.upload(multipartFormData: { multipartFormData in
+                        multipartFormData.append(Data(title.utf8), withName: "title")
+                        multipartFormData.append(Data(content.utf8), withName: "content")
+                        multipartFormData.append(imageData, withName: "feed_img", fileName: "photo.jpg", mimeType: "jpg/png")
+                    }, to: url)
+                    .responseJSON {
+                        response in
+                        print(response)
+                    }
+                    
+                }) {
+                    RoundedRectangle(cornerRadius: 10)
+                        .frame(height: 60)
+                        .overlay(
+                            Text("Upload!!")
+                                .foregroundColor(.white)
+                        )
+                }.padding() // 업로드 버튼
             }//Vstack
             
             
-            
-            
-            
-            
-            
-            
-            
-            //imgupload
-//            Button(action: {
-//
-//                // convert image into base 64
-//                let uiImage: UIImage = self.imageInBlackBox
-//                let imageData: Data = uiImage.jpegData(compressionQuality: 0.1) ?? Data()
-//                let imageStr: String = imageData.base64EncodedString()
-//
-//                //send request to server
-//                guard let url: URL = URL(string: "http://localhost:3000/test_post_img") else {
-//                    print("invalid URL")
-//                    return
-//                }
-//
-//                // create parameters
-//                let paramStr: String = "image=\(imageStr)"
-//                let paramData: Data = paramStr.data(using: .utf8) ?? Data()
-//
-//                var urlRequest: URLRequest =
-//                URLRequest(url: url)
-//                urlRequest.httpMethod = "POST"
-//                urlRequest.httpBody = paramData
-//
-//                // required for sending large data
-//                urlRequest
-//                    .setValue(
-//                        "application/x-www-form-urlencoded",
-//                        forHTTPHeaderField: "Content-Type")
-//
-//                // send the request
-//                URLSession.shared.dataTask(with:
-//                    urlRequest, completionHandler: {
-//
-//                        (data, response, error) in
-//                        guard let data = data else {
-//                            print("invalid data")
-//                            return
-//                        }
-//
-//                        //show response in str
-//                        let responseStr: String = String(data: data, encoding: .utf8) ?? ""
-//                        print(responseStr)
-//
-//                    })
-//                    .resume()
-//
-//            }, label: {
-//                Text("Upload Image")
-//            }) // Button
+           
             
         }
     }
 }
+
 
 struct ImagePickerView: UIViewControllerRepresentable {
     
