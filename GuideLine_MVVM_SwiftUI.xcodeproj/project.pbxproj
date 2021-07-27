@@ -29,6 +29,11 @@
 		F6A9D36126A3F3A800D9E768 /* UploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A9D36026A3F3A800D9E768 /* UploadViewModel.swift */; };
 		F6A9D36326A3F42100D9E768 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A9D36226A3F42100D9E768 /* UploadViewController.swift */; };
 		F6A9D36526A415A500D9E768 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A9D36426A415A500D9E768 /* ImagePicker.swift */; };
+		F6A9D36926A668BB00D9E768 /* Upload_Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A9D36826A668BB00D9E768 /* Upload_Feed.swift */; };
+		F6EB905D26AE877900ACA5B4 /* LoginContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB905C26AE877900ACA5B4 /* LoginContentView.swift */; };
+		F6EB906126AE924C00ACA5B4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB906026AE924C00ACA5B4 /* LoginViewController.swift */; };
+		F6EB906326AE9A7E00ACA5B4 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB906226AE9A7E00ACA5B4 /* UserService.swift */; };
+		F6EB906726AEA55A00ACA5B4 /* LoginSignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB906626AEA55A00ACA5B4 /* LoginSignupViewModel.swift */; };
 		F6FC093C26A02F2D001CB792 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FC093B26A02F2D001CB792 /* HomeViewModel.swift */; };
 		F6FC093E26A02F3F001CB792 /* HomeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FC093D26A02F3F001CB792 /* HomeContentView.swift */; };
 		F6FC094026A02F53001CB792 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FC093F26A02F53001CB792 /* HomeViewController.swift */; };
@@ -87,6 +92,11 @@
 		F6A9D36026A3F3A800D9E768 /* UploadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewModel.swift; sourceTree = "<group>"; };
 		F6A9D36226A3F42100D9E768 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		F6A9D36426A415A500D9E768 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		F6A9D36826A668BB00D9E768 /* Upload_Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upload_Feed.swift; sourceTree = "<group>"; };
+		F6EB905C26AE877900ACA5B4 /* LoginContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContentView.swift; sourceTree = "<group>"; };
+		F6EB906026AE924C00ACA5B4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F6EB906226AE9A7E00ACA5B4 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		F6EB906626AEA55A00ACA5B4 /* LoginSignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupViewModel.swift; sourceTree = "<group>"; };
 		F6FC093B26A02F2D001CB792 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F6FC093D26A02F3F001CB792 /* HomeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentView.swift; sourceTree = "<group>"; };
 		F6FC093F26A02F53001CB792 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				F6350D9D26A0170500DA152B /* HomeUserRouter.swift */,
+				F6EB906226AE9A7E00ACA5B4 /* UserService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -207,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				F66B38CE269EC6DD006EE54A /* Home_User.swift */,
+				F6A9D36826A668BB00D9E768 /* Upload_Feed.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,6 +226,7 @@
 		F66B38BE269EBAFF006EE54A /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				F6EB905B26AE873800ACA5B4 /* Login_Screen */,
 				F6A9D35D26A3F35F00D9E768 /* Upload_Screen */,
 				F6FC093A26A02F17001CB792 /* Home_Screen */,
 				F66B38C0269EBB12006EE54A /* Search */,
@@ -267,6 +280,16 @@
 				F6A9D36426A415A500D9E768 /* ImagePicker.swift */,
 			);
 			path = Upload_Screen;
+			sourceTree = "<group>";
+		};
+		F6EB905B26AE873800ACA5B4 /* Login_Screen */ = {
+			isa = PBXGroup;
+			children = (
+				F6EB905C26AE877900ACA5B4 /* LoginContentView.swift */,
+				F6EB906026AE924C00ACA5B4 /* LoginViewController.swift */,
+				F6EB906626AEA55A00ACA5B4 /* LoginSignupViewModel.swift */,
+			);
+			path = Login_Screen;
 			sourceTree = "<group>";
 		};
 		F6FC093A26A02F17001CB792 /* Home_Screen */ = {
@@ -457,6 +480,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6A9D36926A668BB00D9E768 /* Upload_Feed.swift in Sources */,
 				F6FC095926A27F8C001CB792 /* Home_Detail_ContentView.swift in Sources */,
 				F66B38DA269EDF21006EE54A /* SearchBar.swift in Sources */,
 				F6FC094526A02F9A001CB792 /* UserRowView.swift in Sources */,
@@ -467,6 +491,9 @@
 				F66B38C6269EBCDA006EE54A /* SearchContentView.swift in Sources */,
 				F6FC093E26A02F3F001CB792 /* HomeContentView.swift in Sources */,
 				F66B38C8269EBD18006EE54A /* SearchViewController.swift in Sources */,
+				F6EB906726AEA55A00ACA5B4 /* LoginSignupViewModel.swift in Sources */,
+				F6EB905D26AE877900ACA5B4 /* LoginContentView.swift in Sources */,
+				F6EB906126AE924C00ACA5B4 /* LoginViewController.swift in Sources */,
 				F66B38E4269EEE16006EE54A /* UIViewController+Extension.swift in Sources */,
 				F66B388D269EBAE1006EE54A /* AppDelegate.swift in Sources */,
 				F66B388F269EBAE1006EE54A /* SceneDelegate.swift in Sources */,
@@ -481,6 +508,7 @@
 				F6FC095B26A2944C001CB792 /* CustomNavigationView.swift in Sources */,
 				F6FC095226A032BB001CB792 /* PersonalViewModel.swift in Sources */,
 				F6FC094F26A0326F001CB792 /* NotificationViewController.swift in Sources */,
+				F6EB906326AE9A7E00ACA5B4 /* UserService.swift in Sources */,
 				F6FC094026A02F53001CB792 /* HomeViewController.swift in Sources */,
 				F6FC094D26A03261001CB792 /* NotificationContentView.swift in Sources */,
 				F66B38CF269EC6DD006EE54A /* Home_User.swift in Sources */,

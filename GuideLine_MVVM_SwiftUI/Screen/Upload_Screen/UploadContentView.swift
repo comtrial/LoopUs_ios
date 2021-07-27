@@ -105,7 +105,7 @@ struct UploadContentView: View {
                 
                 Button(action: {
                     
-                    let url: URL = URL(string: "http://127.0.0.1:8000/api/feed/")!
+                    let url: URL = URL(string: "http://52.79.75.189:8000/api/feed/")!
                     let uiImage: UIImage = self.imageInBlackBox
                     let imageData = uiImage.jpegData(compressionQuality: 0.8) ?? Data()
 //                            let imageData: Data = uiImage.jpegData(compressionQuality: 0.1) ?? Data()

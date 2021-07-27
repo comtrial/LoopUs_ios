@@ -28,7 +28,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let tabBarController = UITabBarController()
             tabBarController.setViewControllers([homeVC, searchVC, uploadVC, notificationVC, personalVC], animated: false)
             //tabBarController.tabBar.isHidden = false
-            window.rootViewController = tabBarController
+
+            
+            let loginViewModel = LoginSignupViewModel()
+            let loginContentView = LoginContentView(viewModel:loginViewModel)
+            let loginVC = LoginViewController(rootView: loginContentView)
+            
+            if loginViewModel.isLogged {
+                window.rootViewController = tabBarController
+            }
+            else {window.rootViewController = loginVC}
             
             self.window = window
             window.makeKeyAndVisible()
