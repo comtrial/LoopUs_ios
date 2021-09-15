@@ -20,18 +20,15 @@ class HomeViewController: UIHostingController<HomeContentView> {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        homeViewModel.fetchRandomUsers()
+
+//        homeViewModel.fetchRandomUsers()
+        homeViewModel.fetchHomeFeeds()
         //getDatas()
     }
     
     func configureCommunication() {
-        selectedUserToken = rootView.selectedUserPublisher.sink{ [weak self] user in
-            self?.presentAlert(with:"\(user.description)을 클릭하셨네여")
+        selectedUserToken = rootView.selectedFeedPublisher.sink{ [weak self] feed in
+            self?.presentAlert(with:"\(feed.username)을 클릭하셨네여")
         }
     }
-//    func getDatas() {
-//        networkingService.getUsers{ [weak self] users in
-//            self?.rootView.sot.users = users
-//        }
-//    }
 }

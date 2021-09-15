@@ -26,8 +26,8 @@ struct LoginContentView: View {
                         .autocapitalization(.none)
                     
                 }
-                Button("회원가입", action: {
-                    viewModel.signUp()
+                Button("로그인", action: {
+                    viewModel.login()
                 })
             }
         }

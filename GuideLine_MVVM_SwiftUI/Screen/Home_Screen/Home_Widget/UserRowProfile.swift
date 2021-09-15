@@ -22,8 +22,6 @@ struct ProfileImgView : View {
                         .aspectRatio(contentMode: .fit)
                  })
             .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-            .overlay(Circle().stroke(Color.init(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)),
-                                     lineWidth: 2))
            
     }
 }

@@ -11,13 +11,14 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             
+   
             let homeVC = homeViewController()
             let searchVC = searchViewController()
             let uploadVC = uploadViewController()
@@ -26,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             
             let tabBarController = UITabBarController()
-            tabBarController.setViewControllers([homeVC, searchVC, uploadVC, notificationVC, personalVC], animated: false)
+            tabBarController.setViewControllers([ homeVC, searchVC, uploadVC, notificationVC, personalVC], animated: true)
             //tabBarController.tabBar.isHidden = false
 
             
@@ -44,16 +45,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
     
+   
+    
     //Home
     func homeViewController() -> UIViewController {
         let homeViewModel = HomeViewModel()
-        let homeContentView = HomeContentView(userModel: homeViewModel)
+        let homeContentView = HomeContentView(feedModel: homeViewModel)
         let homeVC = HomeViewController(rootView: homeContentView)
         homeVC.title = "Home"
         
         let navController = UINavigationController(rootViewController: homeVC)
         navController.navigationBar.prefersLargeTitles = true
-        navController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house.fill"), tag: 0)
+        navController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house.fill"), tag: 1)
 //        navController.setToolbarHidden(<#T##hidden: Bool##Bool#>, animated: <#T##Bool#>)
 //        navController.setToolbarHidden(true, animated: false)
 //        DispatchQueue.main.async {
@@ -72,7 +75,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let navController = UINavigationController(rootViewController: searchVC)
         navController.navigationBar.prefersLargeTitles = true
-        navController.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), tag: 1)
+        navController.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), tag: 2)
         return navController
     }
     
@@ -85,7 +88,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let navController = UINavigationController(rootViewController: uploadVC)
         navController.navigationBar.prefersLargeTitles = true
-        navController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "square.and.arrow.up"), tag: 2)
+        navController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "square.and.arrow.up"), tag: 3)
         return navController
     }
     
@@ -98,7 +101,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let navController = UINavigationController(rootViewController: notificationVC)
         navController.navigationBar.prefersLargeTitles = true
-        navController.tabBarItem = UITabBarItem(title: "Notification", image: UIImage(systemName: "bell.badge.fill"), tag: 3)
+        navController.tabBarItem = UITabBarItem(title: "Notification", image: UIImage(systemName: "bell.badge.fill"), tag: 4)
         return navController
     }
     
@@ -111,7 +114,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let navController = UINavigationController(rootViewController: personalVC)
         navController.navigationBar.prefersLargeTitles = true
-        navController.tabBarItem = UITabBarItem(title: "personalVC", image: UIImage(systemName: "person.circle.fill"), tag: 4)
+        navController.tabBarItem = UITabBarItem(title: "personalVC", image: UIImage(systemName: "person.circle.fill"), tag: 5)
         return navController
     }
 }

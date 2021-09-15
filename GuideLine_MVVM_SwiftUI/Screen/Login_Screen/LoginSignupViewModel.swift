@@ -17,12 +17,13 @@ final class LoginSignupViewModel: ObservableObject{
     @Published  var username: String = ""
     @Published  var password: String = ""
     @AppStorage("token") var token: String = ""
-    @AppStorage("isLogged") var isLogged: Bool = false
+    //isLogged -> false 로 바꿔줘야대
+    @AppStorage("isLogged") var isLogged: Bool = true
     
     func signUp() {
         
         let url: URL = URL(
-            string: "http://52.79.75.189:8000/user_api/signup/")!
+            string: "http://3.38.89.253:8000/user_api/signup/")!
         let param: Parameters = [
                     "username": username,
                     "password": password]
@@ -32,12 +33,35 @@ final class LoginSignupViewModel: ObservableObject{
             .sink(receiveCompletion: { completion in
                 
             }, receiveValue: { receiveValue in
-                UserDefaults.standard.set(receiveValue.token, forKey: "token")
+                UserDefaults.standard.set(receiveValue.Token, forKey: "token")
+                UserDefaults.standard.set(true, forKey: "isLogged")
+                
+                print(UserDefaults.standard.string(forKey: "token"))
+            }).store(in: &subscription)
+        
+    }
+    
+    func login() {
+        
+        let url: URL = URL(
+            string: "http://3.38.89.253:8000/user_api/login/")!
+        let param: Parameters = [
+                    "username": username,
+                    "password": password
+        ]
+        AF.request(url, method: .post, parameters: param, encoding: URLEncoding.httpBody)
+            .publishDecodable(type: TokenResponse.self)
+            .compactMap{ $0.value }
+            .sink(receiveCompletion: { completion in
+                
+            }, receiveValue: { receiveValue in
+                UserDefaults.standard.set(receiveValue.Token, forKey: "token")
                 UserDefaults.standard.set(true, forKey: "isLogged")
             }).store(in: &subscription)
         
     }
 }
+
 struct TokenResponse: Codable {
-    var token: String
+    var Token: String
 }

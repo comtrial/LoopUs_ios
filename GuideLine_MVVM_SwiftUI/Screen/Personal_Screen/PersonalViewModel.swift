@@ -9,4 +9,5 @@ import SwiftUI
 
 class PersonalViewModel: ObservableObject {
 
+    @Published var createProfile = false
 }

@@ -1,35 +1,30 @@
 //
-//  RandomUserRowView.swift
-//  ios_tutorial_api
+//  FeedNoImgView.swift
+//  GuideLine_MVVM_SwiftUI
 //
-//  Created by 최승원 on 2021/07/06.
+//  Created by 최승원 on 2021/08/19.
 //
 
 import Foundation
 import SwiftUI
 import URLImage
 
-struct UserRowView : View {
+struct FeedNoImgView : View {
     var feed: Feed
-    
-    let screenSize: CGRect = UIScreen.main.bounds
     
     init(_ feed: Feed) {
         self.feed = feed
-        
     }
     
     var body : some View{
-        
-            VStack(alignment: .leading){
+            VStack{
                 //MARK - Profile
-                
-                var imageUrlex = URL(string: feed.feedImage[0].image)
+//                var imageUrlex = URL(string: feed.feedImage[0].image)
                 
                 
                 HStack{
                     //View에 전달해야 하는 변수를 등록하여 사용
-                    ProfileImgView(imageUrl: imageUrlex! )
+//                    ProfileImgView(imageUrl: imageUrlex! )
                     
                     Text("\(feed.username)")
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
@@ -43,7 +38,7 @@ struct UserRowView : View {
                 
                 
                 //MARK - Feed Content
-                VStack(alignment: .leading){
+                VStack{
                     Text(feed.title)
                         .fontWeight(.semibold)
                         .font(.system(size: 16))
@@ -57,17 +52,6 @@ struct UserRowView : View {
                 
                 
                 //MARK - Feed Img
-                
-                URLImage(imageUrlex!,
-                             content: { image in
-                                image
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                             })
-                    .frame(minWidth: screenSize.width - 60, idealWidth: screenSize.width - 60, maxWidth: screenSize.width - 60, minHeight: 0, idealHeight: screenSize.width - 60, maxHeight: .infinity, alignment: .leading)
-                    .cornerRadius(12)
-            
-  
                     
             }//VstackView
             .frame(minHeight: 250)

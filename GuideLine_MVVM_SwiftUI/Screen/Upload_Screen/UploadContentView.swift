@@ -12,14 +12,12 @@ import Alamofire
 struct UploadContentView: View {
     
     @State var isShowingImagePicker = false
-    
     @State var imageInBlackBox = UIImage()
-    //@State var selectedImage: Image? = Image("")
+
     
-    ///
-    
-    @State  var shouldSendCampus: Bool = false
-    @State  var shouldWriteQusetion: Bool = false
+//
+//    @State  var shouldSendCampus: Bool = false
+//    @State  var shouldWriteQusetion: Bool = false
     @State  var title = ""
     @State  var content: String = ""
     //@ObservedObject var uploadViewModel: UploadViewModel()
@@ -32,10 +30,15 @@ struct UploadContentView: View {
                 
                 Form {
                     
-                    Section(header: Text("양식 설정")) {
-                        Toggle("학교 전체 대상 업로드", isOn: $shouldSendCampus)
-                        Toggle("질문 양식", isOn: $shouldWriteQusetion)
-                    }// 양식 설정 Section
+                    Section(header: Text("작성 양식")){
+                        TextField("게시물 제목을 입력하세요!!", text:
+                                    $title)
+                            .autocapitalization(.none)
+                        CustomTextEditor.init(placeholder: "게시물 내용을 입력하세요!!", text: $content)
+                            .frame(minWidth: 100, maxWidth: .infinity, minHeight: 100, maxHeight: .infinity, alignment: .topLeading)
+                    }// 작성 양식 Section
+                    
+                    
                     
                     Section(header: Text("사진을 추가하세요")) {
                       
@@ -67,54 +70,33 @@ struct UploadContentView: View {
                             .clipped()
                         
                         
-                        
-                        
-                        
-//                        Button(action: {
-//                            let url: URL = URL(string: "http://127.0.0.1:8000/api/feed/")!
-//                            let uiImage: UIImage = self.imageInBlackBox
-//                            let imageData = uiImage.jpegData(compressionQuality: 0.8) ?? Data()
-////                            let imageData: Data = uiImage.jpegData(compressionQuality: 0.1) ?? Data()
-//
-//                            AF.upload(multipartFormData: { multipartFormData in
-//                                multipartFormData.append(Data(title.utf8), withName: "title")
-//                                multipartFormData.append(Data(content.utf8), withName: "content")
-//                                multipartFormData.append(imageData, withName: "feed_img", fileName: "photo.jpg", mimeType: "jpg/png")
-//                            }, to: url)
-//                            .responseJSON {
-//                                response in
-//                                print(response)
-//                            }
-//                        }, label: {
-//                            Text("upload Img")
-//                        })
-                    
+      
                     
                     }// 사진 작성 Section
                     
-                    Section(header: Text("작성 양식")){
-                        TextField("게시물 제목을 입력하세요!!", text:
-                                    $title)
-                            .autocapitalization(.none)
-                        CustomTextEditor.init(placeholder: "게시물 내용을 작성해 주세요!!", text: $content)
-                            .frame(minWidth: 100, maxWidth: .infinity, minHeight: 100, maxHeight: .infinity, alignment: .topLeading)
-                    }// 작성 양식 Section
 
                 }// form
   
                 
                 Button(action: {
                     
-                    let url: URL = URL(string: "http://52.79.75.189:8000/api/feed/")!
+                    let url: URL = URL(string: "http://3.38.89.253:8000/feed_api/upload")!
                     let uiImage: UIImage = self.imageInBlackBox
                     let imageData = uiImage.jpegData(compressionQuality: 0.8) ?? Data()
 //                            let imageData: Data = uiImage.jpegData(compressionQuality: 0.1) ?? Data()
                     
-                    AF.upload(multipartFormData: { multipartFormData in
+                    let token: String = UserDefaults.standard.string(forKey: "token") ?? ""
+                    let headers: HTTPHeaders = ["Authorization": "Token \(token)"]
+                    
+                    AF.upload( multipartFormData: { multipartFormData in
                         multipartFormData.append(Data(title.utf8), withName: "title")
                         multipartFormData.append(Data(content.utf8), withName: "content")
-                        multipartFormData.append(imageData, withName: "feed_img", fileName: "photo.jpg", mimeType: "jpg/png")
-                    }, to: url)
+                        multipartFormData.append(imageData, withName: "image", fileName: "\(title).jpg" , mimeType: "jpg/png")
+                        
+                        print(multipartFormData)
+                    },
+                    to: url,
+                    headers: headers)
                     .responseJSON {
                         response in
                         print(response)
@@ -172,6 +154,7 @@ struct ImagePickerView: UIViewControllerRepresentable {
             if let selectedImageFromPicker = info[.originalImage] as? UIImage {
                 print(selectedImageFromPicker)
                 self.parent.selectedImage = selectedImageFromPicker
+                
              }
             self.parent.isPresented = false
         }
@@ -192,7 +175,7 @@ struct CustomTextEditor: View {
             if text.isEmpty  {
                 Text(placeholder)
                     
-                    .foregroundColor(Color.primary.opacity(0.3))
+                    .foregroundColor(Color.primary.opacity(0.25))
                     .padding(EdgeInsets(top: 7, leading: 0, bottom: 0, trailing: 0))
                     .padding(internalPadding)
             }
